@@ -1,6 +1,6 @@
 {
     "sourceMaps": true,
-    "presets": [["es2015", { "module": false }]],
+    "presets": [["es2015"]],
     "plugins": [],
     "ignore": []
 }
