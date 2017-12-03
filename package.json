@@ -1,0 +1,28 @@
+{
+    "name": "red-agate-example",
+    "private": false,
+    "version": "0.0.1",
+    "description": "HTML|XML|SVG template engine using JSX, suitable for report output.",
+    "keywords": [
+    ],
+    "main": "./bin/index.js",
+    "module": "./modules/index.js",
+    "modules.root": "./modules",
+    "types": "./bin/index.d.ts",
+    "typings": "./bin/index.d.ts",
+    "engines": {
+      "node": "9.x"
+    },
+    "dependencies": {
+    },
+    "devDependencies": {
+    },
+    "scripts": {
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/shellyln/red-agate-example.git"
+    },
+    "author": "shellyln",
+    "license": "ISC"
+  }
