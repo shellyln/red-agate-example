@@ -1,7 +1,7 @@
 {
   "name": "red-agate-example",
   "private": false,
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "red-agate examples",
   "keywords": [],
   "main": "./bin/index.js",
@@ -13,14 +13,15 @@
     "node": "9.x"
   },
   "dependencies": {
-    "red-agate-util": "^0.0.2",
+    "red-agate": "^0.0.3",
+    "red-agate-barcode": "^0.0.3",
     "red-agate-svg-canvas": "^0.0.2",
-    "red-agate": "^0.0.2"
+    "red-agate-util": "^0.0.4"
   },
   "devDependencies": {
     "@types/jasmine": "^2.8.2",
-    "@types/node": "^8.0.53",
-    "autoprefixer": "^7.1.6",
+    "@types/node": "^8.0.57",
+    "autoprefixer": "^7.2.2",
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -52,7 +53,7 @@
     "tslint": "^5.8.0",
     "typescript": "^2.6.2",
     "url-loader": "^0.6.2",
-    "webpack": "^3.8.1",
+    "webpack": "^3.10.0",
     "webpack-shell-plugin": "^0.5.0"
   },
   "scripts": {

@@ -5,6 +5,7 @@ function setHeader(req, res, next) {
 }
 
 module.exports = {
+    "port": 8080,
     "server": {
         "baseDir": "debug",
         "routes": {
