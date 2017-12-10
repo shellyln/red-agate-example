@@ -6,13 +6,14 @@ import { default as billngData } from './examples/billing.data';
 import { kanbanReportHandler } from './examples/kanban';
 import { default as kanbanData } from './examples/kanban.data';
 import { fbaA4ReportHandler } from './examples/fba-a4';
+import { barcodeTestHandler } from './examples/barcode-test';
 
 
 // tslint:disable-next-line:no-eval
 const requireDynamic = eval("require");
 
 const data = kanbanData;
-const handler = fbaA4ReportHandler;
+const handler = barcodeTestHandler;
 
 handler(data, {} as any, (error, result) => {
     if (error) {
