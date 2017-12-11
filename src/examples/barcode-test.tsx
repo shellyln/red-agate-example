@@ -16,7 +16,14 @@ import { Font,
 import { query }           from 'red-agate/modules/red-agate/data';
 import { Code39 }          from 'red-agate-barcode/modules/barcode/Code39';
 import { Code128 }         from 'red-agate-barcode/modules/barcode/Code128';
+import { Ean13,
+         Ean8,
+         Ean5,
+         Ean2,
+         UpcA,
+         UpcE }            from 'red-agate-barcode/modules/barcode/Ean';
 import { Itf }             from 'red-agate-barcode/modules/barcode/Itf';
+import { JapanPostal }     from 'red-agate-barcode/modules/barcode/JapanPostal';
 import { Nw7 }             from 'red-agate-barcode/modules/barcode/Nw7';
 import { Qr }              from 'red-agate-barcode/modules/barcode/Qr';
 
@@ -48,16 +55,27 @@ export let barcodeTestHandler: AwsLambda = (event: any, context, callback) => Re
                         data="Hello" />
                     <Code39 x={15} y={40}
                         data="HELLO"
-                        narrowWidth={0.33 * 2} wideWidth={0.66 * 2} height={15} quietHeight={0} />
+                        narrowWidth={0.33 * 2} wideWidth={0.66 * 2} height={15} quietHeight={0}
+                        font="7px 'OCR B'" textHeight={7} />
                     <Code128 x={15} y={70}
                         data="Hello"
-                        elementWidth={0.33 * 2} height={15} quietHeight={0} />
-                    <Itf x={15} y={100}
+                        elementWidth={0.33 * 2} height={15} quietHeight={0}
+                        font="7px 'OCR B'" textHeight={7} />
+                    <Ean13 x={15} y={100}
+                        data="123456789012"
+                        elementWidth={0.33 * 2} height={15} quietHeight={0}
+                        font="7px 'OCR B'" textHeight={7} />
+                    <Itf x={15} y={130}
                         data="12345" addCheckDigit
-                        narrowWidth={0.33 * 2} wideWidth={0.66 * 2} height={15} quietHeight={0} />
-                    <Nw7 x={15} y={130}
+                        narrowWidth={0.33 * 2} wideWidth={0.66 * 2} height={15} quietHeight={0}
+                        font="7px 'OCR B'" textHeight={7} />
+                    <Nw7 x={15} y={160}
                         data="1234" startChar="A" stopChar="B"
-                        narrowWidth={0.33 * 2} wideWidth={0.66 * 2} height={15} quietHeight={0} />
+                        narrowWidth={0.33 * 2} wideWidth={0.66 * 2} height={15} quietHeight={0}
+                        font="7px 'OCR B'" textHeight={7} />
+                    <JapanPostal x={15} y={190}
+                        data="1234567"
+                        elementWidth={0.33 * 2} height={0.66 * 6} quietHeight={0} />
                 </Svg>
             </section> }
         </ForEach>
