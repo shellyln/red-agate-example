@@ -33,7 +33,7 @@ return [{
                 path.resolve(__dirname, 'src/app.tsx')
             ],
             spec: [
-                path.resolve(__dirname, 'src/spec/foo.ts')
+                path.resolve(__dirname, 'src/_spec/index.ts')
             ]
         },
         // node: {
