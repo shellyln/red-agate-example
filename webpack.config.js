@@ -63,10 +63,12 @@ return [{
                     'ts-loader?' + JSON.stringify({
                         configFile: 'tsconfig.json'
                     }),
-                ]
+                ],
+                exclude: /node_modules[\/\\](?!red-agate).*$/
             }, {
                 test: /\.jsx?$/,
-                use: ['babel-loader']
+                use: ['babel-loader'],
+                exclude: /node_modules[\/\\](?!red-agate).*$/
             }, {
                 enforce: 'pre',
                 test: /\.[tj]sx?$/,
