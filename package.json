@@ -1,7 +1,7 @@
 {
   "name": "red-agate-example",
   "private": false,
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "red-agate examples",
   "keywords": [],
   "main": "./bin/index.js",
@@ -13,12 +13,12 @@
     "node": "9.x"
   },
   "dependencies": {
-    "red-agate": "^0.0.6",
-    "red-agate-barcode": "^0.0.10"
+    "red-agate": "^0.0.7",
+    "red-agate-barcode": "^0.0.11"
   },
   "peerDependencies": {
-    "red-agate-svg-canvas": "^0.0.5",
-    "red-agate-util": "^0.0.5"
+    "red-agate-svg-canvas": "^0.0.6",
+    "red-agate-util": "^0.0.6"
   },
   "devDependencies": {
     "@types/jasmine": "^2.8.2",
