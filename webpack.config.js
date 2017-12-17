@@ -77,10 +77,7 @@ return [{
                     options: {
                     }
                 },
-                exclude: [
-                    // instead of /\/node_modules\//
-                    path.join(process.cwd(), 'node_modules')
-                ]
+                exclude: /node_modules[\/\\](?!red-agate).*$/
             }, {
                 test: /\.html?(\?.+)?$/,
                 use: {
