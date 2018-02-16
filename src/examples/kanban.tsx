@@ -16,6 +16,7 @@ import { Asset,
          Script,
          Style }           from 'red-agate/modules/red-agate/bundler';
 import { query }           from 'red-agate/modules/red-agate/data';
+import { AwsLambda }       from 'red-agate/modules/red-agate/app';
 
 
 
@@ -212,7 +213,7 @@ export let kanbanReportHandler: AwsLambda = (event: KanbanPrintJob, context, cal
                         <Template>
                             <If condition={designerMode}>
                                 <Rect x={0} y={0} width={210 / 2} height={(297 - 1) / 3} lineWidth={0.5} stroke/>
-                                <GridLine startX={0} startY={0} endX={210 / 2} endY={(297 - 1) / 3} gridSize={5} bleed={0} lineWidth={0.1} stroke/>
+                                <GridLine startX={0} startY={0} endX={210 / 2} endY={(297 - 1) / 3} gridSize={5} bleed={0} lineWidth={0.1}/>
                             </If>
 
                             <Kanban leaf={item} />

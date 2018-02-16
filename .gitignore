@@ -58,3 +58,12 @@ build/Release
 
 # NPM files
 .npmrc
+
+# Python cache
+/__pycache__/
+
+# Python virtual environment
+venv
+
+# Python environment files
+.env

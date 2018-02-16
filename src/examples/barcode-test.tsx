@@ -26,6 +26,8 @@ import { Itf }             from 'red-agate-barcode/modules/barcode/Itf';
 import { JapanPostal }     from 'red-agate-barcode/modules/barcode/JapanPostal';
 import { Nw7 }             from 'red-agate-barcode/modules/barcode/Nw7';
 import { Qr }              from 'red-agate-barcode/modules/barcode/Qr';
+import { AwsLambda }       from 'red-agate/modules/red-agate/app';
+import { PrinterMarks }    from 'red-agate/modules/red-agate/printing';
 
 
 
@@ -45,34 +47,36 @@ export let barcodeTestHandler: AwsLambda = (event: any, context, callback) => Re
     <body class="A4">
         <ForEach items={query(event.details).groupEvery(40).select()}> { (items: any[]) =>
             <section class="sheet" style="position: relative; top: 0mm; left: 0mm;">
-                <Svg width={210 - 1} height={297 - 2} unit='mm'>
+                <Svg width={210 - 1} height={297 - 2} unit='mm' templateUrl='https://upload.wikimedia.org/wikipedia/commons/f/fd/Ghostscript_Tiger.svg'>
                     <If condition={designerMode}>
                         <Rect x={0} y={0} width={210} height={297} lineWidth={0.5} stroke/>
-                        <GridLine endX={210} endY={297} bleed={0} lineWidth={0.1} stroke/>
+                        <GridLine endX={210} endY={297} bleed={0} lineWidth={0.1}/>
                     </If>
+
+                    <PrinterMarks x={15} y={20} width={100} height={130} hFold={[10, 20, 30]} vFold={[25, 15, 5]} centerMarks={true} bleedMarks={true} />
 
                     <Qr x={15} y={5}
                         data="Hello" />
                     <Code39 x={15} y={40}
                         data="HELLO"
                         narrowWidth={0.33 * 2} wideWidth={0.66 * 2} height={15} quietHeight={0}
-                        font="7px 'OCR B'" textHeight={7} />
+                        font="7px 'OCRB'" textHeight={7} />
                     <Code128 x={15} y={70}
                         data="Hello"
                         elementWidth={0.33 * 2} height={15} quietHeight={0}
-                        font="7px 'OCR B'" textHeight={7} />
+                        font="7px 'OCRB'" textHeight={7} />
                     <Ean13 x={15} y={100}
                         data="123456789012"
                         elementWidth={0.33 * 2} height={15} quietHeight={0}
-                        font="7px 'OCR B'" textHeight={7} />
+                        font="7px 'OCRB'" textHeight={7} />
                     <Itf x={15} y={130}
                         data="12345" addCheckDigit
                         narrowWidth={0.33 * 2} wideWidth={0.66 * 2} height={15} quietHeight={0}
-                        font="7px 'OCR B'" textHeight={7} />
+                        font="7px 'OCRB'" textHeight={7} />
                     <Nw7 x={15} y={160}
                         data="1234" startChar="A" stopChar="B"
                         narrowWidth={0.33 * 2} wideWidth={0.66 * 2} height={15} quietHeight={0}
-                        font="7px 'OCR B'" textHeight={7} />
+                        font="7px 'OCRB'" textHeight={7} />
                     <JapanPostal x={15} y={190}
                         data="1234567"
                         elementWidth={0.33 * 2} height={0.66 * 6} quietHeight={0} />

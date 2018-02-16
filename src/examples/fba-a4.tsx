@@ -14,6 +14,7 @@ import { Font,
          Image,
          Style }           from 'red-agate/modules/red-agate/bundler';
 import { query }           from 'red-agate/modules/red-agate/data';
+import { AwsLambda }       from 'red-agate/modules/red-agate/app';
 
 
 
@@ -67,14 +68,11 @@ export let fbaA4ReportHandler: AwsLambda = (event: FbaPrintJob, context, callbac
         <ForEach items={query(event.details).groupEvery(40).select()}> { (items: FbaDetail[]) =>
             <section class="sheet" style="position: relative; top: 0mm; left: 0mm;">
                 <Svg width={210 - 1} height={297 - 2} unit='mm'>
-                    <Image asAsset id="logo" srcContext="logo-asset"/>
-                    <Image asAsset id="qr" srcContext="qr-asset"/>
-
                     <SvgImposition items={items} paperWidth={210} paperHeight={297} cols={4} rows={10}> { (item: FbaDetail) =>
                         <Template>
                             <If condition={designerMode}>
                                 <Rect x={0} y={0} width={210 / 4} height={297 / 10} lineWidth={0.5} stroke/>
-                                <GridLine startX={0} startY={0} endX={210 / 4} endY={297 / 10} gridSize={5} bleed={0} lineWidth={0.1} stroke/>
+                                <GridLine startX={0} startY={0} endX={210 / 4} endY={297 / 10} gridSize={5} bleed={0} lineWidth={0.1}/>
                             </If>
 
                             <Fba leaf={item} />
