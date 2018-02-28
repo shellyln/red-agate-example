@@ -1,7 +1,7 @@
 {
   "name": "red-agate-example",
   "private": false,
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "red-agate examples",
   "keywords": [],
   "main": "./bin/index.js",
@@ -13,8 +13,8 @@
     "node": "9.x"
   },
   "dependencies": {
-    "red-agate": "^0.0.13",
-    "red-agate-barcode": "^0.0.13"
+    "red-agate": "^0.0.14",
+    "red-agate-barcode": "^0.0.14"
   },
   "peerDependencies": {
     "red-agate-svg-canvas": "^0.0.13",
