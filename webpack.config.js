@@ -27,10 +27,10 @@ module.exports = function (env) {
         );
     }
 
-return [{
+    return [{
         entry: (env && env.env === 'test') ? void 0 : {
             app: [
-                path.resolve(__dirname, 'src/app.tsx')
+                path.resolve(__dirname, 'src/app.ts')
             ],
             spec: [
                 path.resolve(__dirname, 'src/_spec/index.ts')
@@ -52,7 +52,6 @@ return [{
             libraryTarget: 'commonjs2',
             filename: process.env.NODE_ENV === 'production' ? '[name].js' : '[name].js',
             path: path.resolve(__dirname, 'dist'),
-            devtoolModuleFilenameTemplate: process.env.NODE_ENV === 'production' ? '[resource-path]' : void 0
         },
         target: "node",
         module: {

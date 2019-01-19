@@ -1,4 +1,5 @@
 
+/** @jsx RedAgate.createElement */
 import * as RedAgate       from 'red-agate/modules/red-agate';
 import { Repeat,
          ForEach,
@@ -22,7 +23,7 @@ import { Font,
          Style }           from 'red-agate/modules/red-agate/bundler';
 import { SvgCanvas }       from 'red-agate-svg-canvas/modules/drawing/canvas/SvgCanvas';
 import { query }           from 'red-agate/modules/red-agate/data';
-import { AwsLambda }       from 'red-agate/modules/red-agate/app';
+import { Lambda }          from 'red-agate/modules/red-agate/app';
 
 
 
@@ -65,7 +66,7 @@ export interface BillingStatement {
 
 
 
-export let billngReportHandler: AwsLambda = (event: BillingStatement, context, callback) => RedAgate.renderOnAwsLambda(
+export let billngReportHandler: Lambda<BillingStatement> = (event, context, callback) => RedAgate.renderOnAwsLambda(
 <Html5>
     <Do> { () => {
         event.detail.forEach(x => x.amount = x.qty * x.rate);
@@ -96,7 +97,7 @@ export let billngReportHandler: AwsLambda = (event: BillingStatement, context, c
 
                     <div class="my-company-info">
                         <h1 class="value company-name"><img
-                            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Emoticon_Smile_Face.svg"
+                            src="https://shellyln.github.io/assets/app/Emoticon_Smile_Face.svg"
                             style="width: 16mm; height: 16mm;"/>{event.me.name}</h1>
                         <div class="value addr1">{event.me.addr1}</div>
                         <div class="value addr2">{event.me.addr2}</div>
