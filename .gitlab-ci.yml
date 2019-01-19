@@ -15,8 +15,6 @@ test:node:11:
   script:
     - npm run clean
     - npm run build
-    - npm run build:dist:dev
-    - npm run build:dist:prod
     - npm test
 
 # LTS
@@ -25,8 +23,6 @@ test:node:10:
   script:
     - npm run clean
     - npm run build
-    - npm run build:dist:dev
-    - npm run build:dist:prod
     - npm test
 
 # LTS
@@ -35,6 +31,4 @@ test:node:8:
   script:
     - npm run clean
     - npm run build
-    - npm run build:dist:dev
-    - npm run build:dist:prod
     - npm test
